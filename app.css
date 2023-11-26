@@ -468,6 +468,10 @@ main .setup_guide {
   }
   .header_wrapper .mystore_wrapper,.header_wrapper .notification_wrapper{
     z-index: 2;
+
+  }
+  .header_wrapper .notification_wrapper{
+    width: 90%;
   }
   main .setup_guide {
     width: 100%;
