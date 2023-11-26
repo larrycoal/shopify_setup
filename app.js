@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
     if ($("#accordion_open").style.display !== "block") {
       $("#accordion_open").style.display = "block";
       $("#accordion_close").style.display = "none";
-      $(".setup_guide-bottom").style.height = "350px";
+      $(".setup_guide-bottom").style.height = "400px";
     } else {
       $(".setup_guide-bottom").style.height = "0px";
       $("#accordion_close").style.display = "block";
