@@ -23,7 +23,9 @@ window.addEventListener("load", () => {
     $(".notification_wrapper").style.display = "none";
     $(".mystore_wrapper").style.display = "none";
   });
-
+  $("#close_callout").addEventListener("click", () => {
+    $(".setup_header").style.display = "none";
+  });
   $("#accordion_btn").addEventListener("click", () => {
     if ($("#accordion_open").style.display !== "block") {
       $("#accordion_open").style.display = "block";
@@ -61,6 +63,14 @@ window.addEventListener("load", () => {
           $("#progress").value = checkedStep;
           $("#progressLabel").textContent = `${checkedStep}` + "/5 completed";
         }, 400);
+      } else {
+        el.children[0].style.display = "";
+        el.children[1].style.display = "";
+        el.children[2].style.display = "none";
+        el.children[3].style.display = "none";
+         checkedStep--;
+         $("#progress").value = checkedStep;
+         $("#progressLabel").textContent = `${checkedStep}` + "/5 completed";
       }
     });
   });
