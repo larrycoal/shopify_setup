@@ -131,22 +131,34 @@
                 />
               </svg> </span
             ><span>All stores</span>
-            </a>
+          </a>
         </li>
         <li>
           <a href="https:admin.shopify.com" role="menuitem">Help Center</a>
         </li>
         <li><a href="https:admin.shopify.com" role="menuitem">Changelog</a></li>
-        <li><a href="https:admin.shopify.com" role="menuitem">Community forums</a></li>
-        <li><a href="https:admin.shopify.com" role="menuitem">Hire a Shopify Partner</a></li>
-        <li><a href="https:admin.shopify.com" role="menuitem">Keyboard shortcuts</a></li>
+        <li>
+          <a href="https:admin.shopify.com" role="menuitem">Community forums</a>
+        </li>
+        <li>
+          <a href="https:admin.shopify.com" role="menuitem"
+            >Hire a Shopify Partner</a
+          >
+        </li>
+        <li>
+          <a href="https:admin.shopify.com" role="menuitem"
+            >Keyboard shortcuts</a
+          >
+        </li>
         <li>
           <a href="https:admin.shopify.com" role="menuitem">
             <span> David Micheal </span>
             <span>davidmicheal@gmail.com </span>
           </a>
         </li>
-        <li><a href="https:admin.shopify.com" role="menuitem">Manage account</a></li>
+        <li>
+          <a href="https:admin.shopify.com" role="menuitem">Manage account</a>
+        </li>
         <li><a href="https:admin.shopify.com" role="menuitem">Log out</a></li>
       </ul>
       <ul
@@ -250,7 +262,12 @@
                 running.</span
               >
             </span>
-            <button id="accordion_btn">
+            <button
+              id="accordion_btn"
+              aria-controls="setup_list"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               <svg
                 id="accordion_close"
                 width="20"
@@ -292,8 +309,13 @@
           </p>
         </div>
         <div class="setup_guide-bottom">
-          <ul class="setup_guide-list">
-            <li class="setup_listitem active">
+          <ul
+            class="setup_guide-list"
+            id="setup_list"
+            aria-labelledby="accordion_btn"
+            role="menu"
+          >
+            <li class="setup_listitem active" role="menuitem">
               <button class="btn_check">
                 <svg
                   class="btn_default"
@@ -400,7 +422,7 @@
                 </div>
               </div>
             </li>
-            <li class="setup_listitem">
+            <li class="setup_listitem" role="menuitem">
               <button class="btn_check">
                 <svg
                   class="btn_default"
@@ -510,7 +532,7 @@
                 </div>
               </div>
             </li>
-            <li class="setup_listitem">
+            <li class="setup_listitem" role="menuitem">
               <button class="btn_check">
                 <svg
                   class="btn_default"
@@ -618,7 +640,7 @@
                 </div>
               </div>
             </li>
-            <li class="setup_listitem">
+            <li class="setup_listitem" role="menuitem">
               <button class="btn_check">
                 <svg
                   class="btn_default"
@@ -727,7 +749,7 @@
                 </div>
               </div>
             </li>
-            <li class="setup_listitem">
+            <li class="setup_listitem" role="menuitem">
               <button class="btn_check">
                 <svg
                   class="btn_default"

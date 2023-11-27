@@ -1,28 +1,51 @@
 const $ = (selector) => document.querySelector(selector);
 
 window.addEventListener("load", () => {
-  $("#notification").addEventListener("click", (e) => {
-    e.stopPropagation();
+  function handleNotificationMenu() {
     if ($(".notification_wrapper").style.display === "none") {
       $(".mystore_wrapper").style.display = "none";
       $(".notification_wrapper").style.display = "flex";
+      $("#notification_btn").ariaExpanded = "true";
     } else {
       $(".notification_wrapper").style.display = "none";
+      $("#notification_btn").ariaExpanded = "false";
     }
-  });
-  $("#profile").addEventListener("click", (e) => {
-    e.stopPropagation();
+  }
+
+  function handleProfileMenu() {
     if ($(".mystore_wrapper").style.display === "none") {
       $(".notification_wrapper").style.display = "none";
       $(".mystore_wrapper").style.display = "flex";
+      document
+        .querySelectorAll('.mystore_wrapper [role="menuitem"]')
+        .item(0)
+        .focus();
+      $("#profile").ariaExpanded = "true";
     } else {
       $(".mystore_wrapper").style.display = "none";
+      $("#profile").ariaExpanded = "false";
     }
+  }
+
+  $("#notification_btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    handleNotificationMenu();
   });
+  $("#profile").addEventListener("click", (e) => {
+    e.stopPropagation();
+    handleProfileMenu();
+  });
+  $("#profile").addEventListener("keyup",(e)=>{
+    if(e.key === "Escape"){
+        handleProfileMenu()
+    }
+  })
   $("body").addEventListener("click", () => {
     $(".notification_wrapper").style.display = "none";
     $(".mystore_wrapper").style.display = "none";
   });
+
+
   $("#close_callout").addEventListener("click", () => {
     $(".setup_header").style.display = "none";
   });
@@ -46,9 +69,7 @@ window.addEventListener("load", () => {
 
   let checkedStep = 0;
 
-  const handleSetupProgress = (step) => {
-    $(".progress").value = step;
-  };
+
   // handle setup step checked
   document.querySelectorAll(".btn_check").forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -68,9 +89,9 @@ window.addEventListener("load", () => {
         el.children[1].style.display = "";
         el.children[2].style.display = "none";
         el.children[3].style.display = "none";
-         checkedStep--;
-         $("#progress").value = checkedStep;
-         $("#progressLabel").textContent = `${checkedStep}` + "/5 completed";
+        checkedStep--;
+        $("#progress").value = checkedStep;
+        $("#progressLabel").textContent = `${checkedStep}` + "/5 completed";
       }
     });
   });
